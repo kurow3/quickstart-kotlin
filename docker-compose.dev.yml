@@ -9,6 +9,7 @@ services:
       args:
         java_version: '11'
         kotlin_version: '1.6.21'
+        gradle_version: '8.2.1'
         system_lang: 'en_US.UTF-8'
         system_tz: 'America/Chicago'
     image: '${COMPOSE_PROJECT_NAME}/kotlin'

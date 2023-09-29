@@ -10,14 +10,23 @@ RUN set -eux \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ARG kotlin_dl_url="https://github.com/JetBrains/kotlin/releases/download"
 ARG kotlin_version="1.9.20"
 ARG kotlin_home="/usr/local/kotlin-${kotlin_version}"
+ARG kotlin_dl_url="https://github.com/JetBrains/kotlin/releases/download/v${kotlin_version}/kotlin-compiler-${kotlin_version}.zip"
 RUN set -eux \
  && mkdir -p "${kotlin_home}" \
- && curl -sL "${kotlin_dl_url}/v${kotlin_version}/kotlin-compiler-${kotlin_version}.zip" | bsdtar -xvf - -C "${kotlin_home}" --strip-components 1 \
+ && curl -sL "${kotlin_dl_url}" | bsdtar -xvf - -C "${kotlin_home}" --strip-components 1 \
  && find "${kotlin_home}/bin" -name "*.bat" -type f -delete \
  && chmod -R 0775 "${kotlin_home}/bin"
+
+ARG gradle_version="8.2.1"
+ARG gradle_home="/usr/local/gradle-${gradle_version}"
+ARG gradle_dl_url="https://services.gradle.org/distributions/gradle-${gradle_version}-bin.zip"
+RUN set -eux \
+ && mkdir -p "${gradle_home}" \
+ && curl -sL "${gradle_dl_url}" | bsdtar -xvf - -C "${gradle_home}" --strip-components 1 \
+ && find "${gradle_home}/bin" -name "*.bat" -type f -delete \
+ && chmod -R 0775 "${gradle_home}/bin"
 
 ARG system_lang="C.UTF-8"
 RUN set -eux \
@@ -50,7 +59,9 @@ ENV LANG="${system_lang}" \
     TZ="${system_tz}" \
     KOTLIN_VERSION="${kotlin_version}" \
     KOTLIN_HOME="${kotlin_home}" \
-    PATH="${kotlin_home}/bin:${PATH}"
+    GRADLE_VERSION="${gradle_version}" \
+    GRADLE_HOME="${gradle_home}" \
+    PATH="${gradle_home}/bin:${kotlin_home}/bin:${PATH}"
 WORKDIR "${workspace_dir}"
 
 CMD ["bash"]
