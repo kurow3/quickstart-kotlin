@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  kotlin:
+    container_name: 'kotlin.${COMPOSE_PROJECT_NAME}'
+    build:
+      context: '.'
+      dockerfile: './docker/kotlin/Dockerfile'
+      args:
+        java_version: '11'
+        kotlin_version: '1.6.21'
+        system_lang: 'en_US.UTF-8'
+        system_tz: 'America/Chicago'
+    image: '${COMPOSE_PROJECT_NAME}/kotlin'
+    volumes:
+      - type: 'bind'
+        source: '.'
+        target: '/workspace'
+    tty: true
