@@ -38,9 +38,37 @@ java {
     }
 }
 
+sourceSets {
+    main {
+        kotlin {
+            //srcDir("./src/kotlin")
+            srcDir("./src")
+            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
+        }
+        java {
+            //srcDir("./src/java")
+            srcDir("./src")
+            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
+        }
+    }
+
+    test {
+        kotlin {
+            //srcDir("./test/kotlin")
+            srcDir("./test")
+            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
+        }
+        java {
+            //srcDir("./test/java")
+            srcDir("./test")
+            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
+        }
+    }
+}
+
 application {
     // Define the main class for the application.
-    mainClass.set("com.example.example_package.AppKt")
+    mainClass.set("com.example.kotlin_package.MainKt")
 }
 
 tasks.named<Test>("test") {

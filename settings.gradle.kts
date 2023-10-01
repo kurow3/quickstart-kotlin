@@ -11,4 +11,3 @@ plugins {
 }
 
 rootProject.name = "example_package"
-include("app")
