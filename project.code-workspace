@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+    "livePreview.serverRoot": "/docs/html",
+    "livePreview.portNumber": 49252,
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode-remote.vscode-remote-extensionpack"
+    ]
+  }
+}
