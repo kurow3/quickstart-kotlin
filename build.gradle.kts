@@ -41,12 +41,10 @@ java {
 sourceSets {
     main {
         kotlin {
-            //srcDir("./src/kotlin")
             srcDir("./src")
             destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
         }
         java {
-            //srcDir("./src/java")
             srcDir("./src")
             destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
         }
@@ -54,12 +52,10 @@ sourceSets {
 
     test {
         kotlin {
-            //srcDir("./test/kotlin")
             srcDir("./test")
             destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
         }
         java {
-            //srcDir("./test/java")
             srcDir("./test")
             destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
         }
