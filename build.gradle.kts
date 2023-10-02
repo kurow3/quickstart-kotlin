@@ -41,23 +41,23 @@ java {
 sourceSets {
     main {
         kotlin {
-            srcDir("./src")
-            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
+            srcDir("${project.rootDir}/${sourceSets.main.name}/src")
+            destinationDirectory.set(file("${project.buildDir}/${sourceSets.main.name}/classes"))
         }
         java {
-            srcDir("./src")
-            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.main.name}"))
+            srcDir("${project.rootDir}/${sourceSets.main.name}/src")
+            destinationDirectory.set(file("${project.buildDir}/${sourceSets.main.name}/classes"))
         }
     }
 
     test {
         kotlin {
-            srcDir("./test")
-            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
+            srcDir("${project.rootDir}/${sourceSets.test.name}/src")
+            destinationDirectory.set(file("${project.buildDir}/${sourceSets.test.name}/classes"))
         }
         java {
-            srcDir("./test")
-            destinationDirectory.set(file("${project.buildDir}/classes/${sourceSets.test.name}"))
+            srcDir("${project.rootDir}/${sourceSets.test.name}/src")
+            destinationDirectory.set(file("${project.buildDir}/${sourceSets.test.name}/classes"))
         }
     }
 }
