@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 /******************************************************************************
  * Example Utility class.
  *****************************************************************************/
-public class ExampleUtils
+public final class ExampleUtils
 {
     /******************************************************************************
-     * Constructor.
+     * Non-public Constructor.
      *****************************************************************************/
     private ExampleUtils()
     {

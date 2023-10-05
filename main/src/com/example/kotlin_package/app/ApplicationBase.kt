@@ -4,13 +4,16 @@ package com.example.kotlin_package.app
 /******************************************************************************
  * Application base class.
  *****************************************************************************/
-public abstract class ApplicationBase()
+abstract class ApplicationBase()
 {
     /******************************************************************************
      * Current application arguments.
      *****************************************************************************/
-    public open var args: Array<String> = emptyArray<String>()
-        protected set
+    protected var _args: MutableList<String> = mutableListOf<String>()
+    /******************************************************************************
+     * Current application arguments property.
+     *****************************************************************************/
+    val args get() = this._args
 
     /******************************************************************************
      * Run application.
@@ -18,5 +21,5 @@ public abstract class ApplicationBase()
      * @param[args] Application arguments.
      * @return Application Exit code.
      *****************************************************************************/
-    public abstract fun run(args: Array<String>) : Int
+    abstract fun run(vararg args: String) : Int
 }

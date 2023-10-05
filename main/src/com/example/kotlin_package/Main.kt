@@ -9,7 +9,7 @@ import com.example.kotlin_package.app.ExampleCliApp
 /******************************************************************************
  * Main object.
  *****************************************************************************/
-public object Main
+object Main
 {
     /******************************************************************************
      * Entry point.
@@ -17,9 +17,9 @@ public object Main
      * @param[args] Arguments passed from system.
      *****************************************************************************/
     @JvmStatic
-    public fun main(args: Array<String>)
+    fun main(args: Array<String>)
     {
         val mainApp = ExampleCliApp()
-        exitProcess(mainApp.run(args))
+        exitProcess(mainApp.run(*args))
     }
 }

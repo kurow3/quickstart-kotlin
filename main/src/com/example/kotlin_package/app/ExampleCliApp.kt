@@ -7,22 +7,35 @@ import com.example.java_package.lib.ExampleUtils
 /******************************************************************************
  * Example CLI Application class.
  *****************************************************************************/
-public class ExampleCliApp() : ApplicationBase()
+class ExampleCliApp() : ApplicationBase()
 {
     /******************************************************************************
+     * Decoration string.
+     *****************************************************************************/
+    private val _decoration: String = "*+:.. "
+
+    /******************************************************************************
+     * Enable face-to-face decoration.
+     *****************************************************************************/
+    private val _faceToFaceDecoration: Boolean = true
+
+    /******************************************************************************
      * Run application.
+     * 
+     * Output the argument strings with decorations.
+     * If there are multiple arguments, each is output on a new line.
      * 
      * @param[args] Application arguments.
      * @return Application Exit code.
      *****************************************************************************/
-    public override fun run(args: Array<String>) : Int
+    override fun run(vararg args: String) : Int
     {
         try
         {
-            this.args = args
-            for(str in this.args)
+            this._args = args.toMutableList()
+            for(arg in this._args)
             {
-                println(ExampleUtils.decorateStr(str, "*+:.. ", true))
+                println(ExampleUtils.decorateStr(arg, this._decoration, this._faceToFaceDecoration))
             }
 
             return ExitCode.SUCCESS.value
@@ -41,7 +54,7 @@ public class ExampleCliApp() : ApplicationBase()
      * 
      * @property[value] the value of exit code.
      *****************************************************************************/
-    public enum class ExitCode(val value: Int)
+    enum class ExitCode(val value: Int)
     {
         /******************************************************************************
          * Successful termination.
