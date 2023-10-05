@@ -64,7 +64,7 @@ sourceSets {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.example.kotlin_package.MainKt")
+    mainClass.set("com.example.kotlin_package.Main")
 }
 
 tasks.named<Test>("test") {
