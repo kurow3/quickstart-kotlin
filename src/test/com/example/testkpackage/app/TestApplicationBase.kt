@@ -1,10 +1,10 @@
-package com.example.test_kotlin_package.app
+package com.example.testkpackage.app
 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.example.kotlin_package.app.ApplicationBase
+import com.example.kpackage.app.ApplicationBase
 
 
 /******************************************************************************

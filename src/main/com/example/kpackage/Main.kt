@@ -1,9 +1,9 @@
-package com.example.kotlin_package
+package com.example.kpackage
 
 
 import kotlin.system.exitProcess
 
-import com.example.kotlin_package.app.ExampleCliApp
+import com.example.kpackage.app.ExampleCliApp
 
 
 /******************************************************************************

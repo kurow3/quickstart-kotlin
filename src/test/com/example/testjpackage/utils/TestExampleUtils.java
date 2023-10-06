@@ -1,11 +1,11 @@
-package com.example.test_java_package.lib;
+package com.example.testjpackage.utils;
 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.example.java_package.lib.ExampleUtils;
+import com.example.jpackage.utils.ExampleUtils;
 
 
 /******************************************************************************

@@ -1,7 +1,7 @@
-package com.example.kotlin_package.app
+package com.example.kpackage.app
 
 
-import com.example.java_package.lib.ExampleUtils
+import com.example.jpackage.utils.ExampleUtils
 
 
 /******************************************************************************

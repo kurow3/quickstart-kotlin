@@ -1,4 +1,4 @@
-package com.example.java_package.lib;
+package com.example.jpackage.utils;
 
 
 import java.util.Collections;
