@@ -9,6 +9,9 @@ plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.8.20"
 
+    // Apply the org.jetbrains.dokka plugin to add support for Dokka.
+    id("org.jetbrains.dokka") version "1.8.20"
+
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -80,4 +83,20 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.dokkaGfm {
+    outputDirectory.set(file("${project.buildDir}/docs/gfm"))
+}
+
+tasks.dokkaHtml {
+    outputDirectory.set(file("${project.buildDir}/docs/html"))
+}
+
+tasks.dokkaJavadoc {
+    outputDirectory.set(file("${project.buildDir}/docs/javadoc"))
+}
+
+tasks.dokkaJekyll {
+    outputDirectory.set(file("${project.buildDir}/docs/jekyll"))
 }
