@@ -1,8 +1,8 @@
 package com.example.test_kotlin_package.app
 
 
-import kotlin.test.assertEquals
-import kotlin.test.Test
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -23,7 +23,7 @@ class TestExampleCliApp
         val expectedArgsProperty = mutableListOf<String>()
         val classInstance = ExampleCliApp()
         val actualArgsProperty = classInstance.args
-        assertEquals(expectedArgsProperty, actualArgsProperty)
+        Assertions.assertEquals(expectedArgsProperty, actualArgsProperty)
     }
 
     /******************************************************************************
@@ -42,7 +42,7 @@ class TestExampleCliApp
         val classInstance = ExampleCliApp()
         val actualReturnValue = classInstance.run(*argArgs)
         val actualArgsProperty = classInstance.args
-        assertEquals(expectedReturnValue, actualReturnValue)
-        assertEquals(expectedArgsProperty, actualArgsProperty)
+        Assertions.assertEquals(expectedReturnValue, actualReturnValue)
+        Assertions.assertEquals(expectedArgsProperty, actualArgsProperty)
     }
 }

@@ -1,8 +1,8 @@
 package com.example.test_kotlin_package.app
 
 
-import kotlin.test.assertEquals
-import kotlin.test.Test
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.example.kotlin_package.app.ApplicationBase
 
@@ -27,6 +27,6 @@ class TestApplicationBase
             }
         }
         val actualArgsProperty = subclassInstance.args
-        assertEquals(expectedArgsProperty, actualArgsProperty)
+        Assertions.assertEquals(expectedArgsProperty, actualArgsProperty)
     }
 }
